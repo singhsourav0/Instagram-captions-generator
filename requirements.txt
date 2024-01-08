@@ -7,6 +7,6 @@ google==3.0.0
 requests==2.26.0
 textwrap3==0.9.2
 genai==1.0.0
-mimetypes==3.0.0
+mimetypes
 pathlib==1.0.1
 pprint==0.1
