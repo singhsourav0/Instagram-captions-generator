@@ -20,7 +20,7 @@ num_beams = 4
 gen_kwargs = {"max_length": max_length, "num_beams": num_beams}
 Gemmodel = genai.GenerativeModel('gemini-pro')
 
-genai.configure(api_key='YOUR_GOOGLE_API_KEY')
+genai.configure(api_key='AIzaSyCO_oGhqCy19NAsmhYlQXMBB4t_oWsAl3k')
 
 def to_markdown(text):
     text = text.replace('•', '  *')
@@ -55,5 +55,3 @@ def generate_caption():
     result = generate_output(image_path, mood_category)
     return jsonify({"result": result})
 
-if __name__ == '__main__':
-    app.run(debug=True)
