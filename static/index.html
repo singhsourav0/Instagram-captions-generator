@@ -57,7 +57,7 @@
 
             // Send data to the Flask backend using AJAX
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', '/generate_caption', true);
+            xhr.open('POST', 'api/index.py/generate_caption', true);
             xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
 
             xhr.onload = function() {
