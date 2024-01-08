@@ -20,19 +20,18 @@ num_beams = 4
 gen_kwargs = {"max_length": max_length, "num_beams": num_beams}
 Gemmodel = genai.GenerativeModel('gemini-pro')
 
-genai.configure(api_key='AIzaSyCO_oGhqCy19NAsmhYlQXMBB4t_oWsAl3k')
+genai.configure(api_key='KEY')  # Replace with your actual API key
 
 def to_markdown(text):
     text = text.replace('•', '  *')
     return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
 
-def predict_step(image_paths):
+def predict_step(image_path):
     images = []
-    for image_path in [image_paths]:
-        i_image = Image.open(image_path)
-        if i_image.mode != "RGB":
-            i_image = i_image.convert(mode="RGB")
-        images.append(i_image)
+    i_image = Image.open(image_path)
+    if i_image.mode != "RGB":
+        i_image = i_image.convert(mode="RGB")
+    images.append(i_image)
 
     pixel_values = feature_extractor(images=images, return_tensors="pt").pixel_values
     pixel_values = pixel_values.to(device)
@@ -55,3 +54,5 @@ def generate_caption():
     result = generate_output(image_path, mood_category)
     return jsonify({"result": result})
 
+if __name__ == '__main__':
+    app.run(debug=True)
