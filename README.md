@@ -15,10 +15,10 @@ This project aims to provide a user-friendly platform for generating engaging an
 ## Technologies Used
 
 - Python
-- Django
-- Computer Vision
-- Natural Language Processing
-- AI Language Models (e.g., GPT-3)
+- Flask
+- Image analysis
+- Image Description
+- AI Language Models (gemini)
 
 ## Getting Started
 
@@ -46,4 +46,4 @@ This project is licensed under the Apache License 2.0. See the `LICENSE` file fo
 
 For questions, suggestions, or support, please contact:
 
-- Email: singhsourav0@gmail.com
+- Email: darkathon89@gmail.com
